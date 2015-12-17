@@ -1,0 +1,28 @@
+body{
+
+	background-color: #ff9933;
+	font-family: Helvetica;
+	font-size: 24pt;
+	text-align: center;
+
+}
+
+.resize {
+	width: 125px;
+	height: 175px;
+	float: center;
+	margin-right: 2em;
+
+	
+
+}
+
+.active {
+	width: 125px;
+	height: auto;
+	background-color: blue;
+	
+}
+
+
+
