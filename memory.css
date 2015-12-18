@@ -7,22 +7,23 @@ body{
 
 }
 
-.resize {
-	width: 125px;
+img {
 	height: 175px;
-	float: center;
-	margin-right: 2em;
-
-	
-
-}
-
-.active {
 	width: 125px;
-	height: auto;
-	background-color: blue;
-	
+	float: left;
+	margin-right: 2em;
+	margin-left: 2em;
+	margin-top: 2em;
+	border: 1px solid black;
 }
 
 
+
+
+
+
+
+
+
+ 
 

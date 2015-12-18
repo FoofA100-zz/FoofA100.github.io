@@ -1,29 +1,76 @@
 "use strict"
 
-   console.log('loaded');
+$(function(){
+  console.log('loaded');
+	
+var shuffle = function () {
+    var parent = $('body');
+    var divs = $('.card')
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+}
 
- 	var superCards = ["img/Batman.png", "img/BlackW.png", "img/Captain.png", 
- 	"img/Flash.png","img/GreenL.png", "img/Hawkeye.png","img/Hulk.png","img/WonderW.png","img/Thor.png","img/Batman.png", 
- 	"img/BlackW.png", "img/Captain.png", "img/Flash.png","img/GreenL.png", "img/Hawkeye.png","img/Hulk.png",
- 	"img/WonderW.png","img/Thor.png"]
-
- 	var chooseCards = function(){
- 		return superCards[Math.floor(Math.random() * 17)];
-
-
-
- 	} 	
-
- 	//for (var i = 0; i < superCards.length; i++)
-
-
-  	var deckCard = function(){
-   	$(this).toggleClass('active');
-
-   }
-
-   $('#container').click(deckCard);
+shuffle()
 
 
 
-   
+
+// $('.card').html('<b>Shuffling Deck...</b>')
+//   setTimeout(function(){
+// $('.card').html(toAppend)
+// }, 1500)
+// }) 
+
+//shuffleArray(superCards);
+
+
+  
+
+$('.card').click(function(){
+  var img = $(this).children('img')
+  var alt = $(this).children('img').attr('data-alternateImage')
+  img.attr('src',alt)
+  
+  
+  // var numberofcardsflippedover = 0
+
+  // cardsflippedover function(){
+  //   if (numberofcardsflippedover > 2) {
+  //     return "superhero.png" = 'card'
+  //   }
+
+  // }
+
+  // if (numberofcardsflippedover = 1) {
+  //   return "card"
+  // }
+
+  // numberofcardsflippedover = 0 
+
+  // if number of cards flipped over > 2 
+  // set all the cards imgs to superhero.png IF THEY DONT HAVE THE FOUND CLASS ON THEM. 
+
+
+  // if numberofcardsflippedover = 1
+  //   save that card to "first"
+  // if numberofcardsflippedover = 2 
+  //   save that card to 'second'
+
+  // compare first and second 
+  // if same, add a class called 'found'
+    // if not, flip back over to back of card. 
+
+});
+
+
+
+
+
+
+
+
+
+    });
+
+
