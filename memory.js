@@ -27,7 +27,7 @@ var resetCards = function(img1, img2) {
   img2.attr('src', 'img/superhero.png');
  }
 
-var clickCard =function (element, clickCount) {
+var clickCard = function(element, clickCount) {
   if (clickCount === 0) {
     img1 = $(element).children('img');
     var alt = $(element).children('img').attr('data-alternateImage');
@@ -40,7 +40,7 @@ var clickCard =function (element, clickCount) {
   if (clickedCard === alt) {
       counter++
   if (counter === 8) {
-        $("body").text("CONGRATS, YOUR MEMORY IS SUPER!").css({"color":"#007fff", "font-size": "48pt"});
+        $("body").text("CONGRATS, YOUR MEMORY IS SUPER!"+" Refresh to play again!").css({"color":"#007fff", "font-size": "48pt"});
     }
       } else {
         setTimeout(function() {
