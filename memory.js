@@ -2,7 +2,9 @@
 
 $(function(){
   console.log('loaded');
-	
+
+
+
 var shuffle = function () {
     var parent = $('body');
     var divs = $('.card')
@@ -13,9 +15,12 @@ var shuffle = function () {
 
 shuffle()
 
+
 var clickedCard = '';
 var clickCount = 0;
 var img1, img2;
+var counter = 0
+
 
 var resetCards = function(img1, img2) {
   img1.attr('src', 'img/superhero.png');
@@ -28,18 +33,23 @@ var clickCard =function (element, clickCount) {
     var alt = $(element).children('img').attr('data-alternateImage');
     clickedCard = alt;
     img1.attr('src',alt)
-  } else if (clickCount === 1) {
-    img2 = $(element).children('img');
-    var alt = $(element).children('img').attr('data-alternateImage');
-    img2.attr('src',alt)
-    if (clickedCard === alt) {
-    } else {
-      setTimeout(function() {
+      } else if (clickCount === 1) {
+      img2 = $(element).children('img');
+      var alt = $(element).children('img').attr('data-alternateImage');
+      img2.attr('src',alt)
+  if (clickedCard === alt) {
+      counter++
+  if (counter === 8) {
+        $("body").text("CONGRATS, YOUR MEMORY IS SUPER!").css({"color":"#007fff", "font-size": "48pt"});
+    }
+      } else {
+        setTimeout(function() {
         resetCards(img1, img2);
       }, 1000)
     }
   }
 }
+
 
  $('.card').click(function(){
   if (clickCount === 2) {
