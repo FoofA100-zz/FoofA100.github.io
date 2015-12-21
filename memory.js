@@ -13,34 +13,47 @@ var shuffle = function () {
 
 shuffle()
 
+var clickedCard = '';
+var clickCount = 0;
+var img1, img2;
+
+var resetCards = function(img1, img2) {
+  img1.attr('src', 'img/superhero.png');
+  img2.attr('src', 'img/superhero.png');
+ }
+
+var clickCard =function (element, clickCount) {
+  if (clickCount === 0) {
+    img1 = $(element).children('img');
+    var alt = $(element).children('img').attr('data-alternateImage');
+    clickedCard = alt;
+    img1.attr('src',alt)
+  } else if (clickCount === 1) {
+    img2 = $(element).children('img');
+    var alt = $(element).children('img').attr('data-alternateImage');
+    img2.attr('src',alt)
+    if (clickedCard === alt) {
+    } else {
+      setTimeout(function() {
+        resetCards(img1, img2);
+      }, 1000)
+    }
+  }
+}
+
+ $('.card').click(function(){
+  if (clickCount === 2) {
+      return clickCount = 0;
+  }
+
+     clickCard(this, clickCount)
+     clickCount++;
+});
+     clickCard()
 
 
 
-// $('.card').html('<b>Shuffling Deck...</b>')
-//   setTimeout(function(){
-// $('.card').html(toAppend)
-// }, 1500)
-// }) 
 
-//shuffleArray(superCards);
-
-
-  
-
-$('.card').click(function(){
-  var img = $(this).children('img')
-  var alt = $(this).children('img').attr('data-alternateImage')
-  img.attr('src',alt)
-  
-  
-  // var numberofcardsflippedover = 0
-
-  // cardsflippedover function(){
-  //   if (numberofcardsflippedover > 2) {
-  //     return "superhero.png" = 'card'
-  //   }
-
-  // }
 
   // if (numberofcardsflippedover = 1) {
   //   return "card"
@@ -61,7 +74,13 @@ $('.card').click(function(){
   // if same, add a class called 'found'
     // if not, flip back over to back of card. 
 
-});
+
+//   $('body').html('<b>Shuffling Deck...</b>')
+//   setTimeout(function(){
+//    $('#backImage').html(toAppend)
+//    }, 1500)
+// }) 
+  
 
 
 
@@ -70,7 +89,6 @@ $('.card').click(function(){
 
 
 
-
-    });
+   });
 
 

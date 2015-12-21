@@ -1,25 +1,37 @@
 body{
-
-	background-color: #ff9933;
+	background-color: #990000;
+	background-image: url('superman_logo.png');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: center;
 	font-family: Helvetica;
 	font-size: 24pt;
 	text-align: center;
+	
 
 }
 
 img {
-	height: 175px;
-	width: 125px;
+	height: 155px;
+	width: 105px;
 	float: left;
-	margin-right: 2em;
-	margin-left: 2em;
-	margin-top: 2em;
-	border: 1px solid black;
+	margin-right: 3em;
+	margin-left: 3em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	border: 2px solid black;
 }
 
 
 
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 
+}
 
 
 
